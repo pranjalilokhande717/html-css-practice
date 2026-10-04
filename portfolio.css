@@ -321,12 +321,7 @@ footer {
     padding: 25px;
   }
 }
-.educationDetails {
-  border-left: 3px solid #6c63ff;
-  margin: auto;
-  max-width: 800px;
-  padding-left: 35px;
-}
+
 
 .educationCard {
   background-color: white;
