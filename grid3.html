@@ -1,0 +1,38 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Gallery</title>
+
+    <style>
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Responsive Image Gallery</h1>
+
+    <div class="gallery">
+        <img src="./gridimg.jpg" alt="Image 1">
+        <img src="./gridimg1.jpg" alt="Image 2">
+        <img src="./modelimg.jpg" alt="Image 3">
+        <img src="./mountain image.png" alt="Image 4">
+        <img src="./parker.jpg" alt="Image 5">
+        <img src="./lamypen.jpg" alt="Image 6">
+    </div>
+
+</body>
+</html>

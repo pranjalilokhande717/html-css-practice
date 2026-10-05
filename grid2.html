@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Assignment 1 of Grid</title>
+  <style>
+    .blog-container{
+        display:grid;
+        grid-template-columns:1fr,3fr ;
+        grid-template-rows: 100px 300px 80px;
+        grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+        gap:10px;
+
+    }
+
+header {
+    grid-area: header;
+    background-color: lightblue;
+}
+
+aside {
+    grid-area: sidebar;
+    background-color: lightgreen;
+}
+
+main {
+    grid-area: main;
+    background-color: lightyellow;
+}
+
+footer {
+    grid-area: footer;
+    background-color: lightpink;
+}
+  </style>
+<body>
+    <div class="blog-container">
+        <header>Header</header>
+        <aside>Sidebar</aside>
+        <main>
+            <h2>My Blog</h2>
+            <p>welcome to my blog page</p>
+        </main>
+        <footer>footer</footer>
+
+    </div>
+</body>
+</html>
+</body>
