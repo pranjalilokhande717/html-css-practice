@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Layout</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: #fff;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .page {
+      width: 580px;
+      height: 490px;
+      padding: 20px 14px;
+      border: 7px solid #111;
+      display: grid;
+      grid-template-rows: 64px 64px 1fr 64px;
+      gap: 6px;
+    }
+
+    .box {
+      border: 3px solid #888;
+      display: grid;
+      place-items: center;
+      color: #5c963f;
+      font-size: 30px;
+      text-align: center;
+    }
+
+    .columns {
+      display: grid;
+      grid-template-columns: 1fr 2.5fr 1fr;
+      gap: 6px;
+      min-height: 0;
+    }
+
+    @media (max-width: 620px) {
+      .page {
+        width: calc(100vw - 24px);
+        height: min(490px, calc(100vh - 24px));
+      }
+
+      .box {
+        font-size: clamp(16px, 5vw, 30px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="box">Header</header>
+    <nav class="box">Navigation Menu</nav>
+
+    <section class="columns">
+      <aside class="box">Content</aside>
+      <article class="box">Main<br />Content</article>
+      <aside class="box">Content</aside>
+    </section>
+
+    <footer class="box">Footer</footer>
+  </main>
+</body>
+</html>
