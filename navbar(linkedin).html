@@ -1,0 +1,353 @@
+
+               <!DOCTYPE html>
+<html>
+<head>
+    <title>LinkedIn Navbar</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* MAIN NAVBAR */
+        nav {
+            display: flex;
+            align-items: center;
+            height: 45px;
+            background-color: white;
+            padding: 0 50px;
+            border-bottom: 2px solid #eeeeee;
+        }
+
+        /* LINKEDIN LOGO */
+        .logo {
+            width: 20px;
+            height: 20px;
+            background-color: #0a66c2;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 8px;
+        }
+
+        /* SEARCH BAR */
+        .search-box {
+            display: flex;
+            align-items: center;
+            width: 155px;
+            height: 20px;
+            border: 1px solid #bbbbbb;
+            border-radius: 15px;
+            padding: 0 8px;
+            margin-right: 65px;
+        }
+
+        .search-icon {
+            font-size: 10px;
+            color: #555;
+            margin-right: 7px;
+        }
+
+        .search-box input {
+            border: none;
+            outline: none;
+            width: 100%;
+            font-size: 9px;
+        }
+
+        /* NAVIGATION ITEMS */
+        .nav-items {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            gap: 30px;
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: #666;
+            font-size: 8px;
+            white-space: nowrap;
+        }
+
+        .icon {
+            font-size: 14px;
+            margin-bottom: 2px;
+            color: #555;
+        }
+
+        /* HOME ACTIVE */
+        .active {
+            color: #222;
+            border-bottom: 2px solid #222;
+        }
+
+        .active .icon {
+            color: #222;
+        }
+
+        /* PEOPLE ICON */
+        .people {
+            position: relative;
+            width: 18px;
+            height: 13px;
+            margin-bottom: 2px;
+        }
+
+        .person-one,
+        .person-two {
+            position: absolute;
+            border: 2px solid #666;
+            border-radius: 50%;
+            width: 5px;
+            height: 5px;
+            top: 0;
+        }
+
+        .person-one {
+            left: 2px;
+        }
+
+        .person-two {
+            right: 2px;
+        }
+
+        .people::after {
+            content: "";
+            position: absolute;
+            width: 14px;
+            height: 5px;
+            border: 2px solid #666;
+            border-bottom: none;
+            border-radius: 8px 8px 0 0;
+            left: 1px;
+            bottom: 0;
+        }
+
+        /* BRIEFCASE */
+        .briefcase {
+            width: 14px;
+            height: 9px;
+            border: 2px solid #666;
+            border-radius: 1px;
+            position: relative;
+            margin-bottom: 2px;
+        }
+
+        .briefcase::before {
+            content: "";
+            position: absolute;
+            width: 6px;
+            height: 3px;
+            border: 2px solid #666;
+            border-bottom: none;
+            left: 2px;
+            top: -5px;
+        }
+
+        /* MESSAGE ICON */
+        .message {
+            width: 15px;
+            height: 10px;
+            border: 2px solid #666;
+            border-radius: 3px;
+            position: relative;
+            margin-bottom: 2px;
+        }
+
+        .message::after {
+            content: "...";
+            position: absolute;
+            font-size: 8px;
+            left: 3px;
+            top: -2px;
+        }
+
+        /* BELL */
+        .bell {
+            width: 11px;
+            height: 12px;
+            border: 2px solid #666;
+            border-radius: 8px 8px 3px 3px;
+            position: relative;
+            margin-bottom: 2px;
+        }
+
+        .bell::after {
+            content: "";
+            position: absolute;
+            width: 4px;
+            height: 2px;
+            background-color: #666;
+            border-radius: 50%;
+            bottom: -4px;
+            left: 3px;
+        }
+
+        /* PROFILE */
+        .profile {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: #777;
+            margin-bottom: 2px;
+        }
+
+        /* FOR BUSINESS */
+        .business {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: #666;
+            font-size: 8px;
+            white-space: nowrap;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 3px);
+            grid-template-rows: repeat(3, 3px);
+            gap: 2px;
+            margin-bottom: 3px;
+        }
+
+        .grid span {
+            width: 3px;
+            height: 3px;
+            background-color: #666;
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <nav>
+
+        <!-- LINKEDIN LOGO -->
+        <div class="logo">
+            in
+        </div>
+
+
+        <!-- SEARCH -->
+        <div class="search-box">
+
+            <div class="search-icon">
+                🔍
+            </div>
+
+            <input type="text" placeholder="Search">
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+        <div class="nav-items">
+
+            <!-- HOME -->
+            <div class="nav-item active">
+
+                <div class="icon">⌂</div>
+
+                <div>Home</div>
+
+            </div>
+
+
+            <!-- MY NETWORK -->
+            <div class="nav-item">
+
+                <div class="people">
+
+                    <div class="person-one"></div>
+                    <div class="person-two"></div>
+
+                </div>
+
+                <div>My Network</div>
+
+            </div>
+
+
+            <!-- JOBS -->
+            <div class="nav-item">
+
+                <div class="briefcase"></div>
+
+                <div>Jobs</div>
+
+            </div>
+
+
+            <!-- MESSAGING -->
+            <div class="nav-item">
+
+                <div class="message"></div>
+
+                <div>Messaging</div>
+
+            </div>
+
+
+            <!-- NOTIFICATIONS -->
+            <div class="nav-item">
+
+                <div class="bell"></div>
+
+                <div>Notifications</div>
+
+            </div>
+
+
+            <!-- ME -->
+            <div class="nav-item">
+
+                <div class="profile"></div>
+
+                <div>Me ▼</div>
+
+            </div>
+
+
+            <!-- FOR BUSINESS -->
+            <div class="business">
+
+                <div class="grid">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </div>
+
+                <div>For Business ▼</div>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+</body>
+</html>

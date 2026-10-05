@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h1 style="font-family: 'Times New Roman', Times, serif;">Pens Collection</h1>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .card {
+            width: 16rem;
+            border: 1px solid gray;
+            box-shadow: 1px 1px 1px 2px gray;
+        }
+
+        .imgCard {
+            width: 100%;
+        }
+
+        .paddingCard {
+            padding: 10px;
+        }
+
+        .cardTitle {
+            color: burlywood;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .cardDescri {
+            text-align: justify;
+        }
+        .badgeStock {
+    color: green;
+    font-weight: bold;
+}
+
+        .btnGroup {
+            text-align: center;
+            margin: 10px auto;
+            /* display: none; */
+            visibility: hidden;
+        }
+
+        .card:hover .btnGroup {
+            /* display: block; */
+            visibility: visible;
+        }
+
+        .btn {
+            background-color: purple;
+            color: white;
+            padding: 10px 15px;
+            border: 0;
+            border-radius: 10px;
+        }
+
+        .btn:hover {
+            background-color: rgb(88, 88, 88);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <img src="./lamypen.jpg" alt="lamy" class="imgCard">
+
+        <h3 class="cardTitle">LAMY</h3>
+
+        <p class="cardDescri paddingCard">
+           LAMY pens are known for their stylish design, smooth writing, and excellent quality. They are comfortable to use and perfect for everyday writing.
+        </p>
+
+        <div class="PriceStock paddingCard">
+            <span><u>Price : &#8377; 100</span></u>
+            <span class="badgeStock">In Stock</span>
+        </div>
+
+        <div class="btnGroup">
+            <button class="btn">Buy Now</button>
+            <button class="btn">Add To Cart</button>
+        </div>
+    </div>
+
+
+    <div class="card">
+        <img src="./parker.jpg" alt="parker" class="imgCard">
+
+        <h3 class="cardTitle">PARKER</h3>
+
+        <p class="cardDescri">
+            PARKER pens are famous for their elegant design and premium writing experience. They offer smooth performance and are suitable for both professional and personal use.
+        </p>
+
+        <div class="PriceStock">
+            <span><u>Price : &#8377; 150</span></u>
+            <span class="badgeStock">In Stock</span>
+        </div>
+
+        <div class="btnGroup">
+            <button class="btn">Buy Now</button>
+            <button class="btn">Add To Cart</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="./pilot pen.jpg" alt="pilot" class="imgCard">
+
+        <h3 class="cardTitle">PILOT</h3>
+
+        <p class="cardDescri">
+           PILOT pens provide smooth and reliable writing with a comfortable grip. They are popular for their quality, precision, and wide range of writing products.
+        </p>
+
+        <div class="PriceStock">
+            <span><u>Price : &#8377; 200</span></u>
+            <span class="badgeStock">In Stock</span>
+        </div>
+
+        <div class="btnGroup">
+            <button class="btn">Buy Now</button>
+            <button class="btn">Add To Cart</button>
+        </div>
+    </div>
+
+</body>
+
+</html>

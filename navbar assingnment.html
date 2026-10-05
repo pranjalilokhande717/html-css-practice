@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flex Practice</title>
+
+    <style>
+    .box {
+        width: 95%;
+            height: 80px;
+            background-color: #062442;
+            margin: 15px 0;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+}
+
+.child {
+    background-color: #087bd9;
+    color: white;
+    padding: 15px;
+}
+.box2{
+    width:95%;
+    height:50px;
+}
+.box2 .child {
+    flex: 1;
+}
+.box3 .child {
+    flex: 1;
+}
+
+.box3 .green {
+    flex: 2;
+    background-color: #419b76;
+}
+.box4 .child:first-child {
+    flex: 1;
+     padding: 15px;
+     
+      
+}
+
+.box4 .green {
+    background-color: #419b76;
+   
+}
+.box5 {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.box5 .child {
+    flex: 0 0 auto;
+}
+.box6 .orange {
+    flex: 1;
+    background-color: #ff8418;
+}
+.box7 .orange {
+    flex: 1;
+    background-color: #ff8418;
+}
+.box8 {
+    flex-wrap: wrap;
+}
+
+.box8 .orange {
+    background-color: #ff8418;
+    flex-basis: 100%;
+}
+
+
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <div class="child">child</div>
+        <div class="child">This is some longer content</div>
+        <div class="child">child</div>
+    </div>
+    <div class="box box2">
+    <div class="child">child</div>
+    <div class="child">child</div>
+    <div class="child">child</div>
+</div>
+<div class="box box3">
+    <div class="child">child</div>
+    <div class="child">child</div>
+    <div class="child green">child</div>
+</div>
+<div class="box box4">
+
+    <div class="child">
+        <span>child</span>
+        <span class="text">
+        
+        Now this is a lot of content that goes here and to be honest we should be wary of changes.
+        </span>
+    </div>
+
+    <div class="child green">
+        child
+    </div>
+
+</div>
+<div class="box box5">
+    <div class="child">child</div>
+    <div class="child">child</div>
+    <div class="child">child</div>
+</div>
+
+   <div class="box box6">
+    <div class="child">child</div>
+    <div class="child">child</div>
+    <div class="child orange">child</div>
+</div>
+<div class="box box7">
+    <div class="child">
+        child
+
+
+        And this is a lot of content, okay? Okay? And this is a lot of content,
+        okay? Okay? And this is a lot of content, okay? Okay?
+    </div>
+
+    <div class="child orange">
+        child
+    </div>
+</div>
+<div class="box box8">
+    <div class="child">child</div>
+    <div class="child">child</div>
+    <div class="child orange">child</div>
+</div>
+
+</div>
+
+</body>
+</html>

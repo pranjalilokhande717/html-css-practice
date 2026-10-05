@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Positioning boxes</title>
+
+  <style>
+ body {
+      min-height: 120vh;
+      margin: 0;
+      padding: 30px;
+      font-family: Arial, sans-serif;
+    }
+
+    .parent {
+      width: 180px;
+      height: 120px;
+      padding: 15px;
+      color: white;
+      font-weight: bold;
+    }
+    .box1{
+        position:static;
+        background-color:royalblue;
+
+    }
+    .box2{
+        position: relative;
+        top:25px;
+        left:100px;
+        background-color:seagreen;
+        z-index:2;
+
+    }
+    .conatiner{
+        position:relative;
+        height:200px;
+        margin-top:20px;
+    }
+    .box4{
+        position:absolute;
+        right: 40px;
+        bottom:10px;
+        background-color:orange;
+        z-index: 1;
+
+    }
+    .box4{
+        position:fixed;
+        right:20px;
+        bottom:20px;
+        background-color:blueviolet;
+        z-index:3;
+
+    }
+    </style>
+    </head>
+    <body>
+        <div class="parent box1">Box 1<br />position: static</div>
+
+  <div class="parent box2">Box 2<br />position: relative</div>
+
+  <div class="container">
+    <div class="parent box3">Box 3<br />position: absolute</div>
+  </div>
+
+  <div class="parent box4">Box 4<br />position: fixed</div>
+</body>
+</html>

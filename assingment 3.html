@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Layout</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      font-family: Arial, sans-serif;
+      background: white;
+    }
+
+    .container {
+      width: min(95%, 600px);
+      background: #f7a1a6;
+      padding: 18px 20px 14px;
+      display: grid;
+      gap: 16px;
+    }
+
+    header,
+    footer {
+      height: 46px;
+      background: #93cfc5;
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    .main-content {
+      display: grid;
+      grid-template-columns: 30% 1fr;
+      gap: 20px;
+      min-height: 270px;
+    }
+
+    aside {
+      background: #59b5b5;
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    article {
+      background: #f8757a;
+      color: white;
+      padding: 30px 15px 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+
+    article h2 {
+      text-align: center;
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    .images {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .image-box {
+      height: 102px;
+      background: #d6d4d4;
+      display: grid;
+      place-items: center;
+      color: white;
+      font-size: 20px;
+    }
+
+    @media (max-width: 500px) {
+      .main-content {
+        grid-template-columns: 1fr;
+      }
+
+      aside {
+        min-height: 120px;
+      }
+
+      .images {
+        grid-template-columns: 1fr;
+      }
+
+      .image-box {
+        height: 130px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>Header</header>
+
+    <main class="main-content">
+      <aside>Aside</aside>
+
+      <article>
+        <h2>Article</h2>
+
+        <div class="images">
+          <div class="image-box">Image</div>
+          <div class="image-box">Image</div>
+          <div class="image-box">Image</div>
+        </div>
+      </article>
+    </main>
+
+    <footer>Footer</footer>
+  </div>
+</body>
+</html>

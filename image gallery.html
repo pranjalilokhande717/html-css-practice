@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Image Gallery</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      font-family: Arial, sans-serif;
+      background: #ffffff;
+    }
+
+    .gallery-box {
+      width: min(90%, 460px);
+      padding: 12px;
+      border-top: 2px solid #222;
+      border-bottom: 2px solid #222;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .gallery img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.08);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+    }
+
+    @media (max-width: 480px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="gallery-box">
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=400" alt="Colorful chairs" />
+      <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400" alt="Fire hydrant" />
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400" alt="Ocean view" />
+
+      <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400" alt="City view" />
+      <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400" alt="Building" />
+      <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?w=400" alt="Room interior" />
+
+      <img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=400" alt="Bridge" />
+      <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?w=400" alt="Street lamp" />
+      <img src="https://images.unsplash.com/photo-1527694224012-b7e6b88c34ad?w=400" alt="Cold water" />
+    </div>
+  </div>
+</body>
+</html>

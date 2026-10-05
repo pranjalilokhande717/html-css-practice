@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Narrow Navbar</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 15px 12px;
+      font-family: Arial, sans-serif;
+      background: white;
+    }
+
+    .navbar-box {
+      max-width: 460px;
+      margin: auto;
+      padding: 14px 12px 18px;
+      background: white;
+      box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.35);
+      border: 1px solid #ddd;
+    }
+
+    .navbar {
+      background: orangered;
+      padding: 18px 20px;
+      border-radius: 3px;
+    }
+
+    .links {
+      display: flex;
+      gap: 22px;
+      margin-bottom: 20px;
+    }
+
+    .links a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .search-area {
+      display: flex;
+      gap: 6px;
+    }
+
+    .search-area input {
+      flex: 1;
+      height: 22px;
+      border: none;
+      border-radius: 4px;
+      padding: 4px 6px;
+      font-size: 14px;
+    }
+
+    .search-area button {
+      height: 22px;
+      padding: 0 12px;
+      border: none;
+      border-radius: 12px;
+      background: white;
+      color: orangered;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    h1 {
+      margin-top: 62px;
+      text-align: center;
+      color: #667;
+      font-size: 28px;
+      font-style: italic;
+      font-weight: normal;
+    }
+
+    /* Extra small mobile screens */
+    @media (max-width: 380px) {
+      .links {
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .links a {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="navbar-box">
+    <nav class="navbar">
+      <div class="links">
+        <a href="#">Logo</a>
+        <a href="#">Home</a>
+        <a href="#">Products</a>
+        <a href="#">Services</a>
+      </div>
+
+      <form class="search-area">
+        <input type="search" placeholder="Search" />
+        <button type="submit">Go</button>
+      </form>
+    </nav>
+  </div>
+
+  <h1>Navbar on narrow screens</h1>
+</body>
+</html>

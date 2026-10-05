@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registration</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 16px 4.5%;
+      font-family: Arial, sans-serif;
+      color: #333;
+      background: #fff;
+    }
+
+    .registration-area {
+      min-height: 452px;
+      padding: 38px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #4169f5;
+    }
+
+    .registration-card {
+      width: min(100%, 544px);
+      padding: 14px 21px;
+      border-radius: 4px;
+      background: #fff;
+      box-shadow: 0 2px 5px rgb(0 0 0 / 18%);
+    }
+
+    h1 {
+      display: table;
+      margin: 0 0 20px;
+      padding-bottom: 2px;
+      border-bottom: 2px solid #4169f5;
+      font-size: 15px;
+      line-height: 1.2;
+    }
+
+    .section-title {
+      margin: 0 0 13px;
+      color: #8a8a8a;
+      font-size: 11px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px 14px;
+    }
+
+    label {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      font-size: 10px;
+      font-weight: 600;
+    }
+
+    input {
+      width: 100%;
+      height: 27px;
+      padding: 0 9px;
+      border: 1px solid #d2d2d2;
+      border-radius: 3px;
+      outline: none;
+      font: 10px Arial, sans-serif;
+    }
+
+    input::placeholder {
+      color: #999;
+    }
+
+    input:focus {
+      border-color: #4169f5;
+    }
+
+    .identity-title {
+      margin-top: 16px;
+    }
+
+    button {
+      width: 152px;
+      height: 29px;
+      margin-top: 20px;
+      border: 0;
+      border-radius: 3px;
+      background: #4169f5;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    button span {
+      margin-left: 5px;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 12px;
+      }
+
+      .registration-area {
+        padding: 20px 12px;
+      }
+
+      .registration-card {
+        padding: 18px;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="registration-area">
+    <form class="registration-card">
+      <h1>Registration</h1>
+
+      <p class="section-title">Personal Details</p>
+
+      <div class="form-grid">
+        <label>
+          Full Name
+          <input type="text" placeholder="Enter your name" />
+        </label>
+
+        <label>
+          Date of Birth
+          <input type="text" placeholder="Enter birth date" />
+        </label>
+
+        <label>
+          Email
+          <input type="email" placeholder="Enter your email" />
+        </label>
+
+        <label>
+          Mobile number
+          <input type="tel" placeholder="Enter mobile number" />
+        </label>
+
+        <label>
+          Gender
+          <input type="text" placeholder="Enter your gender" />
+        </label>
+
+        <label>
+          Occupation
+          <input type="text" placeholder="Enter occupation" />
+        </label>
+      </div>
+
+      <p class="section-title identity-title">Identity Details</p>
+
+      <div class="form-grid">
+        <label>
+          ID Type
+          <input type="text" placeholder="Enter ID type" />
+        </label>
+
+        <label>
+          ID Number
+          <input type="text" placeholder="Enter ID number" />
+        </label>
+
+        <label>
+          Issue Authority
+          <input type="text" placeholder="Enter issue department" />
+        </label>
+
+        <label>
+          Issue Date
+          <input type="text" placeholder="Enter ID issue date" />
+        </label>
+
+        <label>
+          Issue State
+          <input type="text" placeholder="Enter ID issue state" />
+        </label>
+
+        <label>
+          Expiry Date
+          <input type="text" placeholder="Enter ID expiry date" />
+        </label>
+      </div>
+
+      <button type="button">Next <span aria-hidden="true">⟶</span></button>
+    </form>
+  </main>
+</body>
+</html>

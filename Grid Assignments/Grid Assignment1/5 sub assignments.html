@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Assignment 1 - CSS Grid</title>
+
+    <style>
+
+        /* ============================= */
+        /* GENERAL STYLING */
+        /* ============================= */
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: white;
+        }
+
+        .assignment {
+            margin-bottom: 60px;
+            padding: 20px;
+            border: 2px solid black;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+
+        /* ============================= */
+        /* SUB-ASSIGNMENT 1 - BASIC GRID */
+        /* ============================= */
+
+        .grid-container-1 {
+            display: grid;
+
+            grid-template-columns: 100px 100px 100px;
+            grid-template-rows: 100px 100px 100px;
+
+            gap: 10px;
+        }
+
+        .box-1 {
+            background-color: blueviolet;
+            border: 1px solid black;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        /* ============================= */
+        /* SUB-ASSIGNMENT 2 - BLOG */
+        /* ============================= */
+
+        .blog-container {
+            display: grid;
+
+            grid-template-columns: 1fr 3fr;
+            grid-template-rows: 100px 300px 80px;
+
+            grid-template-areas:
+                "header header"
+                "sidebar main"
+                "footer footer";
+
+            gap: 10px;
+        }
+
+        .blog-header {
+            grid-area: header;
+            background-color: lightblue;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .blog-sidebar {
+            grid-area: sidebar;
+            background-color: lightgreen;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .blog-main {
+            grid-area: main;
+            background-color: lightyellow;
+            padding: 20px;
+        }
+
+        .blog-footer {
+            grid-area: footer;
+            background-color: lightpink;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        /* ============================= */
+        /* SUB-ASSIGNMENT 3 - GALLERY */
+        /* ============================= */
+
+        .gallery {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(150px, 1fr));
+
+            gap: 15px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 200px;
+
+            object-fit: cover;
+
+            border-radius: 8px;
+        }
+
+
+        /* ============================= */
+        /* SUB-ASSIGNMENT 4 - DASHBOARD */
+        /* ============================= */
+
+        .dashboard {
+            display: grid;
+
+            grid-template-columns: 200px 1fr 200px;
+            grid-template-rows: 80px 400px 60px;
+
+            grid-template-areas:
+                "dashboard-header dashboard-header dashboard-header"
+                "dashboard-nav dashboard-main dashboard-aside"
+                "dashboard-footer dashboard-footer dashboard-footer";
+
+            gap: 10px;
+        }
+
+        .dashboard-header {
+            grid-area: dashboard-header;
+            background-color: lightblue;
+            border: 1px solid black;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .dashboard-nav {
+            grid-area: dashboard-nav;
+            background-color: lightgreen;
+            border: 1px solid black;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .dashboard-main {
+            grid-area: dashboard-main;
+            background-color: lightyellow;
+            border: 1px solid black;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .dashboard-aside {
+            grid-area: dashboard-aside;
+            background-color: lightpink;
+            border: 1px solid black;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .dashboard-footer {
+            grid-area: dashboard-footer;
+            background-color: lightgray;
+            border: 1px solid black;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        /* ============================= */
+        /* SUB-ASSIGNMENT 5 - CARDS */
+        /* ============================= */
+
+        .card-container {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fill, minmax(200px, 1fr));
+
+            gap: 20px;
+
+            padding: 20px;
+        }
+
+        .card {
+            border: 1px solid black;
+            padding: 15px;
+
+            text-align: center;
+
+            background-color: lightgray;
+        }
+
+        .card img {
+            width: 100%;
+            height: 150px;
+
+            object-fit: cover;
+        }
+
+        .card h3 {
+            margin: 10px 0;
+        }
+
+        .card p {
+            margin: 0;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Assignment 1 - CSS Grid</h1>
+
+
+    <!-- ================================= -->
+    <!-- SUB-ASSIGNMENT 1 -->
+    <!-- ================================= -->
+
+    <div class="assignment">
+
+        <h2>Sub-Assignment 1: Basic Grid</h2>
+
+        <div class="grid-container-1">
+
+            <div class="box-1">box1</div>
+            <div class="box-1">box2</div>
+            <div class="box-1">box3</div>
+
+            <div class="box-1">box4</div>
+            <div class="box-1">box5</div>
+            <div class="box-1">box6</div>
+
+            <div class="box-1">box7</div>
+            <div class="box-1">box8</div>
+            <div class="box-1">box9</div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================= -->
+    <!-- SUB-ASSIGNMENT 2 -->
+    <!-- ================================= -->
+
+    <div class="assignment">
+
+        <h2>Sub-Assignment 2: Blog Layout</h2>
+
+        <div class="blog-container">
+
+            <header class="blog-header">
+                Header
+            </header>
+
+            <aside class="blog-sidebar">
+                Sidebar
+            </aside>
+
+            <main class="blog-main">
+
+                <h2>My Blog</h2>
+
+                <p>
+                    Welcome to my blog page
+                </p>
+
+            </main>
+
+            <footer class="blog-footer">
+                Footer
+            </footer>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================= -->
+    <!-- SUB-ASSIGNMENT 3 -->
+    <!-- ================================= -->
+
+    <div class="assignment">
+
+        <h2>Sub-Assignment 3: Responsive Image Gallery</h2>
+
+        <div class="gallery">
+
+            <img src="./a highly creative di.png" alt="Image 1">
+
+            <img src="./wallpaper 2.jpeg" alt="Image 2">
+
+            <img src="./wallpaper.webp" alt="Image 3">
+
+            <img src="./wallpaper1.jpeg" alt="Image 4">
+
+            <img src="./wallpaper1.jpeg" alt="Image 5">
+
+            <img src="./wallpaper3.jpeg" alt="Image 6">
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================= -->
+    <!-- SUB-ASSIGNMENT 4 -->
+    <!-- ================================= -->
+
+    <div class="assignment">
+
+        <h2>Sub-Assignment 4: Dashboard Layout</h2>
+
+        <div class="dashboard">
+
+            <header class="dashboard-header">
+                Header
+            </header>
+
+            <nav class="dashboard-nav">
+                Navigation
+            </nav>
+
+            <main class="dashboard-main">
+                Main Content
+            </main>
+
+            <aside class="dashboard-aside">
+                Aside
+            </aside>
+
+            <footer class="dashboard-footer">
+                Footer
+            </footer>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================= -->
+    <!-- SUB-ASSIGNMENT 5 -->
+    <!-- ================================= -->
+
+    <div class="assignment">
+
+        <h2>Sub-Assignment 5: Card Layout</h2>
+
+        <div class="card-container">
+
+            <div class="card">
+
+                <img src="./wallpaper 2.jpeg"
+                    alt="Image">
+
+                <h3>Card 1</h3>
+
+                <p>
+                    This is the description of card 1.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <img src="./wallpaper.webp"
+                    alt="Image">
+
+                <h3>Card 2</h3>
+
+                <p>
+                    This is the description of card 2.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <img src="./wallpaper1.jpeg"
+                    alt="Image">
+
+                <h3>Card 3</h3>
+
+                <p>
+                    This is the description of card 3.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <img src="./wallpaper3.jpeg"
+                    alt="Image">
+
+                <h3>Card 4</h3>
+
+                <p>
+                    This is the description of card 4.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <img src="./a highly creative di.png"
+                    alt="Image">
+
+                <h3>Card 5</h3>
+
+                <p>
+                    This is the description of card 5.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <img src="./wallpaper3.jpeg"
+                    alt="Image">
+
+                <h3>Card 6</h3>
+
+                <p>
+                    This is the description of card 6.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+```

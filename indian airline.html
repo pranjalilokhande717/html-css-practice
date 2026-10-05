@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Air India — Exclusive Deals</title>
+  <style>
+    :root {
+      --red: #e4002b;
+      --wine: #78002e;
+      --ink: #282b33;
+      --muted: #666b77;
+      --page: #f6f7f8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--page);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer;
+    }
+
+    /* Top navigation */
+    .site-header {
+      height: 76px;
+      padding: 0 3.3%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #fff;
+      border-bottom: 1px solid #e2e3e5;
+      box-shadow: 0 2px 5px #0000000a;
+    }
+
+    .brand {
+      color: #d9082b;
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      display: inline-block;
+      margin-left: -4px;
+      color: #d7a650;
+      font-size: 34px;
+      transform: rotate(-25deg);
+    }
+
+    .nav-area {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 18px;
+    }
+
+    .utility-nav,
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      white-space: nowrap;
+    }
+
+    .utility-nav {
+      gap: 28px;
+      font-size: 14px;
+    }
+
+    .main-nav {
+      gap: 25px;
+      font-size: 15px;
+    }
+
+    .nav-link {
+      color: #19191d;
+      text-decoration: none;
+    }
+
+    .nav-link.highlight {
+      color: var(--red);
+    }
+
+    .signup,
+    .signin {
+      padding: 6px 11px;
+      border-radius: 8px;
+      color: var(--red);
+      background: #fff;
+      border: 1px solid var(--red);
+    }
+
+    .signin {
+      color: #fff;
+      background: #87003b;
+      border-color: #87003b;
+      font-weight: 700;
+    }
+
+    /* Booking search panel */
+    .booking-panel {
+      position: relative;
+      max-width: 1540px;
+      min-height: 252px;
+      margin: 0 auto;
+      padding: 42px 20px 20px;
+      background: #fff;
+      border-radius: 0 0 22px 22px;
+      box-shadow: 0 4px 10px #00000010;
+    }
+
+    .booking-options {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 38px;
+      color: #4b5060;
+      font-size: 15px;
+    }
+
+    .trip-types,
+    .booking-extras {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .radio {
+      width: 20px;
+      height: 20px;
+      display: inline-grid;
+      place-items: center;
+      margin-right: 4px;
+      vertical-align: middle;
+      border: 1px solid #cfd2dc;
+      border-radius: 50%;
+    }
+
+    .radio.selected {
+      border-color: var(--red);
+    }
+
+    .radio.selected::after {
+      width: 10px;
+      height: 10px;
+      content: "";
+      background: var(--red);
+      border-radius: 50%;
+    }
+
+    .multi-city {
+      color: #1760d5;
+    }
+
+    .booking-extras {
+      color: #50515a;
+    }
+
+    .booking-extras strong {
+      color: #24252b;
+      font-weight: 500;
+    }
+
+    .divider {
+      height: 20px;
+      border-left: 1px solid #e2e3e8;
+      margin: 0 4px 0 16px;
+    }
+
+    .chevron {
+      width: 11px;
+      height: 11px;
+      display: inline-block;
+      margin-left: 9px;
+      border-right: 2px solid var(--red);
+      border-bottom: 2px solid var(--red);
+      transform: rotate(45deg) translateY(-3px);
+    }
+
+    .search-row {
+      display: grid;
+      grid-template-columns: 2fr 1.55fr 1.7fr 1.6fr 1.55fr 148px;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .route {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .route-place {
+      min-width: 0;
+    }
+
+    .route-place strong {
+      display: block;
+      color: #636875;
+      font-size: clamp(28px, 3vw, 41px);
+      line-height: 1.05;
+    }
+
+    .route-place span {
+      display: block;
+      margin: 5px 0 0 4px;
+      color: #505463;
+      font-size: 15px;
+    }
+
+    .swap {
+      color: var(--red);
+      font-size: 27px;
+      line-height: 1;
+    }
+
+    .field {
+      min-height: 50px;
+      padding-left: 15px;
+      border-left: 1px solid #aeb3c1;
+    }
+
+    .field label {
+      display: block;
+      margin: 1px 0 7px;
+      color: #666a72;
+      font-size: 13px;
+    }
+
+    .field .value {
+      color: #35373e;
+      font-size: 17px;
+      white-space: nowrap;
+    }
+
+    .field.has-chevron {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-right: 7px;
+    }
+
+    .field-content label {
+      margin-bottom: 7px;
+    }
+
+    .search-button {
+      height: 50px;
+      color: #fff;
+      background: #df5e78;
+      border: 0;
+      border-radius: 11px;
+      font-weight: 700;
+    }
+
+    .member-offer {
+      width: fit-content;
+      margin: 36px 0 0 auto;
+      padding: 9px 16px;
+      color: #484a52;
+      background: #faf8f3;
+      border: 1px solid #dedbd4;
+      border-radius: 24px;
+      font-size: 14px;
+    }
+
+    .offer-badge {
+      display: inline-grid;
+      width: 38px;
+      height: 30px;
+      margin: -5px 7px -5px -11px;
+      place-items: center;
+      color: var(--red);
+      background: #fff;
+      border-radius: 20px;
+      font-size: 21px;
+    }
+
+    /* Deals section */
+    .deals {
+      max-width: 1540px;
+      margin: 30px auto 0;
+      padding: 0 0 30px;
+    }
+
+    .deals-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    h1 {
+      margin: 0;
+      color: #bd1238;
+      font-size: 30px;
+      letter-spacing: -1px;
+    }
+
+    .deals-description {
+      margin: 13px 0 32px;
+      color: #4b4b4b;
+      font-size: 20px;
+      letter-spacing: 0.1px;
+    }
+
+    .view-all {
+      flex: 0 0 auto;
+      padding: 15px 20px;
+      color: var(--red);
+      background: transparent;
+      border: 1px solid var(--red);
+      border-radius: 11px;
+    }
+
+    .view-all b {
+      display: inline-grid;
+      min-width: 27px;
+      height: 27px;
+      margin-left: 6px;
+      place-items: center;
+      color: white;
+      background: #d9082b;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .deal-grid,
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .deal-card {
+      min-height: 143px;
+      padding: 20px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      overflow: hidden;
+      color: white;
+      background:
+        radial-gradient(ellipse at 70% 50%, #b50b58 0%, transparent 47%),
+        linear-gradient(105deg, #21000e, #890039);
+      border-radius: 16px;
+    }
+
+    .deal-card h2 {
+      z-index: 1;
+      margin: 0;
+      font-size: 20px;
+      line-height: 1.17;
+      font-weight: 750;
+    }
+
+    .deal-art {
+      color: #f4bd49;
+      font-size: 70px;
+      line-height: 1;
+      text-shadow: 2px 3px 1px #693408;
+      transform: rotate(-10deg);
+    }
+
+    .deal-card:nth-child(3) .deal-art {
+      font-size: 66px;
+    }
+
+    .deal-card:nth-child(4) .deal-art {
+      font-size: 65px;
+      transform: rotate(18deg);
+    }
+
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin: 30px 0;
+    }
+
+    .carousel-dots span {
+      width: 10px;
+      height: 10px;
+      background: #b5bac4;
+      border-radius: 50%;
+    }
+
+    .carousel-dots span:first-child {
+      background: var(--red);
+    }
+
+    .service-card {
+      min-height: 80px;
+      padding: 16px 28px;
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      color: #464951;
+      background: #fff;
+      border-radius: 16px;
+      font-size: 21px;
+      white-space: nowrap;
+    }
+
+    .service-icon {
+      color: var(--red);
+      font-size: 27px;
+      font-weight: 300;
+    }
+
+    .service-arrow {
+      margin-left: auto;
+      color: var(--red);
+      font-size: 30px;
+      font-weight: 300;
+    }
+
+    @media (max-width: 1100px) {
+      .site-header {
+        padding: 0 20px;
+      }
+
+      .utility-nav,
+      .main-nav {
+        gap: 13px;
+        font-size: 12px;
+      }
+
+      .booking-panel,
+      .deals {
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+
+      .search-row {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .route {
+        grid-column: span 3;
+      }
+
+      .deal-grid,
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 650px) {
+      .site-header {
+        height: auto;
+        min-height: 68px;
+        padding: 14px 18px;
+        align-items: flex-start;
+      }
+
+      .brand {
+        font-size: 22px;
+      }
+
+      .nav-area {
+        align-items: flex-end;
+      }
+
+      .utility-nav {
+        gap: 8px;
+        font-size: 11px;
+      }
+
+      .utility-nav .nav-link:nth-child(-n+3),
+      .main-nav {
+        display: none;
+      }
+
+      .booking-panel {
+        margin: 0 12px;
+        padding: 24px 16px;
+      }
+
+      .booking-options {
+        align-items: flex-start;
+        gap: 16px;
+        flex-direction: column;
+        margin-bottom: 24px;
+      }
+
+      .search-row {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px 10px;
+      }
+
+      .route {
+        grid-column: span 2;
+      }
+
+      .field {
+        padding-left: 10px;
+      }
+
+      .search-button {
+        grid-column: span 2;
+      }
+
+      .member-offer {
+        margin-top: 22px;
+        font-size: 12px;
+      }
+
+      .deals {
+        margin: 26px 14px 0;
+      }
+
+      .deals-heading {
+        align-items: flex-start;
+      }
+
+      h1 {
+        font-size: 25px;
+      }
+
+      .deals-description {
+        font-size: 16px;
+        line-height: 1.45;
+      }
+
+      .view-all {
+        padding: 10px;
+        font-size: 13px;
+      }
+
+      .deal-grid,
+      .services-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .deal-card {
+        min-height: 125px;
+      }
+
+      .service-card {
+        min-height: 72px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">AIR INDIA<span class="brand-mark">⌒</span></div>
+
+    <div class="nav-area">
+      <nav class="utility-nav" aria-label="Utility navigation">
+        <a class="nav-link" href="#">▤ &nbsp; TARIFF</a>
+        <a class="nav-link highlight" href="#">DISCOVER AIRBIZ</a>
+        <a class="nav-link" href="#">♧ &nbsp; SUPPORT</a>
+        <a class="nav-link" href="#">⌕ &nbsp; SEARCH</a>
+        <a class="nav-link" href="#">◎ &nbsp; IN⌄</a>
+        <button class="signup">SIGN UP</button>
+        <button class="signin">SIGN IN</button>
+      </nav>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a class="nav-link" href="#">BOOK &amp; MANAGE</a>
+        <a class="nav-link" href="#">WHERE WE FLY</a>
+        <a class="nav-link" href="#">PREPARE TO TRAVEL</a>
+        <a class="nav-link" href="#">AIR INDIA EXPERIENCE</a>
+        <a class="nav-link" href="#">MAHARAJA CLUB</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="booking-panel" aria-label="Flight search">
+      <div class="booking-options">
+        <div class="trip-types">
+          <span><i class="radio selected"></i>Round Trip</span>
+          <span><i class="radio"></i>One Way</span>
+          <span class="multi-city">Multi City</span>
+        </div>
+
+        <div class="booking-extras">
+          <span>Pay By &nbsp; <strong>Cash</strong><i class="chevron"></i></span>
+          <i class="divider"></i>
+          <span><strong>Add Promo Code</strong><i class="chevron"></i></span>
+        </div>
+      </div>
+
+      <div class="search-row">
+        <div class="route">
+          <div class="route-place">
+            <strong>FROM</strong>
+            <span>Origin</span>
+          </div>
+          <span class="swap" aria-hidden="true">↔</span>
+          <div class="route-place">
+            <strong>TO</strong>
+            <span>Destination</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Depart</label>
+          <div class="value">Select Date</div>
+        </div>
+
+        <div class="field">
+          <label>Return</label>
+          <div class="value">Select Date</div>
+        </div>
+
+        <div class="field has-chevron">
+          <div class="field-content">
+            <label>Passenger(s)</label>
+            <div class="value">1 Adult</div>
+          </div>
+          <i class="chevron"></i>
+        </div>
+
+        <div class="field has-chevron">
+          <div class="field-content">
+            <label>Class</label>
+            <div class="value">Economy</div>
+          </div>
+          <i class="chevron"></i>
+        </div>
+
+        <div class="field has-chevron">
+          <div class="field-content">
+            <label>Concession Type</label>
+            <div class="value">None</div>
+          </div>
+          <i class="chevron"></i>
+        </div>
+
+        <button class="search-button">Search</button>
+      </div>
+
+      <div class="member-offer">
+        <span class="offer-badge">♧</span>
+        Logged-in users enjoy up to 15% off on fares
+      </div>
+    </section>
+
+    <section class="deals">
+      <div class="deals-heading">
+        <h1>EXCLUSIVE DEALS</h1>
+        <button class="view-all">View All <b>26</b></button>
+      </div>
+
+      <p class="deals-description">
+        Uncover a range of deals and discounts, curated to ensure you get unbeatable value every time you fly with us.
+      </p>
+
+      <div class="deal-grid">
+        <article class="deal-card">
+          <h2>BANK<br />OFFERS</h2>
+          <span class="deal-art" aria-hidden="true">₹</span>
+        </article>
+
+        <article class="deal-card">
+          <h2>DISCOUNT<br />CODES</h2>
+          <span class="deal-art" aria-hidden="true">%</span>
+        </article>
+
+        <article class="deal-card">
+          <h2>LIMITED TIME<br />DEALS</h2>
+          <span class="deal-art" aria-hidden="true">◷</span>
+        </article>
+
+        <article class="deal-card">
+          <h2>SPECIAL<br />FARES</h2>
+          <span class="deal-art" aria-hidden="true">✈</span>
+        </article>
+      </div>
+
+      <div class="carousel-dots" aria-label="Slide 1 of 6">
+        <span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <span class="service-icon">♙</span> HOTELS <span class="service-arrow">›</span>
+        </div>
+        <div class="service-card">
+          <span class="service-icon">♧</span> CAR BOOKING <span class="service-arrow">›</span>
+        </div>
+        <div class="service-card">
+          <span class="service-icon">♧</span> DUTY FREE <span class="service-arrow">›</span>
+        </div>
+        <div class="service-card">
+          <span class="service-icon">▧</span> GIFT CARD <span class="service-arrow">›</span>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      background: #fff;
+      font-family: Arial, sans-serif;
+    }
+
+    .background {
+      width: min(750px, 94vw);
+      padding: 27px 33px 16px;
+      background: linear-gradient(110deg, #376844, #98a900);
+    }
+
+    .card {
+      min-height: 425px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+      border-radius: 28px;
+      background: #fff;
+      box-shadow: 0 3px 10px rgb(0 0 0 / 18%);
+    }
+
+    .welcome-panel {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 32px;
+      border-radius: 28px 130px 130px 28px;
+      background: linear-gradient(145deg, #004653, #00505b);
+      color: #fff;
+      text-align: center;
+    }
+
+    .welcome-panel h1 {
+      margin: 0 0 18px;
+      font-size: 29px;
+    }
+
+    .welcome-panel p {
+      max-width: 280px;
+      margin: 0 0 26px;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .sign-in {
+      width: 126px;
+      height: 34px;
+      border: 1px solid #fff;
+      background: transparent;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .register-panel {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 30px 34px;
+      text-align: center;
+    }
+
+    .register-panel h2 {
+      margin: 0 0 18px;
+      color: #111;
+      font-size: 28px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 9px;
+      margin-bottom: 20px;
+    }
+
+    .social-links a {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      border: 1px solid #4d8b96;
+      border-radius: 10px;
+      color: #21606a;
+      font-size: 13px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .or {
+      margin: 0 0 4px;
+      color: #111;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .register-panel .hint {
+      margin: 0 0 7px;
+      color: #555;
+      font-size: 12px;
+    }
+
+    .register-form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+    }
+
+    .register-form input {
+      width: 100%;
+      height: 33px;
+      padding: 0 13px;
+      border: 0;
+      background: #ccc;
+      font-size: 13px;
+    }
+
+    .register-form button {
+      width: 132px;
+      height: 34px;
+      align-self: center;
+      margin-top: 2px;
+      border: 0;
+      background: #b7bd00;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    @media (max-width: 650px) {
+      .background {
+        padding: 16px;
+      }
+
+      .card {
+        grid-template-columns: 1fr;
+      }
+
+      .welcome-panel {
+        min-height: 280px;
+        border-radius: 28px 28px 90px 90px;
+      }
+
+      .register-panel {
+        padding: 32px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="background">
+    <div class="card">
+      <section class="welcome-panel">
+        <h1>Welcome Back!</h1>
+        <p>Provide your personal details to use all features</p>
+        <button class="sign-in" type="button">SIGN IN</button>
+      </section>
+
+      <section class="register-panel">
+        <h2>Register With</h2>
+
+        <div class="social-links">
+          <a href="#" aria-label="Google">G+</a>
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="GitHub">●</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+        </div>
+
+        <p class="or">OR</p>
+        <p class="hint">Fill Out The Following Info For Registration</p>
+
+        <form class="register-form">
+          <input type="text" placeholder="Name" aria-label="Name" />
+          <input type="email" placeholder="Email" aria-label="Email" />
+          <input type="password" placeholder="Password" aria-label="Password" />
+          <button type="submit">SIGN UP</button>
+        </form>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

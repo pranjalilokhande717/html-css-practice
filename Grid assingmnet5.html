@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Animal Grid</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background-color: white;
+        }
+
+        .container {
+            width: 915px;
+            height: 776px;
+
+            margin: 28px auto;
+
+            background-color: #d4b400;
+
+            background-image: url("./mountain\ image.png");
+            background-size: contain;
+            background-position: center;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        /* Common style for all circles */
+
+        .circle {
+            width: 315px;
+            height: 315px;
+
+            border-radius: 50%;
+
+            border: 7px solid #d4b400;
+
+            overflow: hidden;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+        .circle img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+        }
+
+
+        /* Wolf - top left */
+
+        .circle1 {
+            grid-column: 1;
+            grid-row: 1;
+
+            justify-self: center;
+            align-self: center;
+
+            transform: translate(5px, 5px);
+        }
+
+
+        /* Tiger - top right */
+
+        .circle2 {
+            grid-column: 3;
+            grid-row: 1;
+
+            justify-self: center;
+            align-self: center;
+
+            transform: translate(-5px, 5px);
+        }
+
+
+        /* Lion - center */
+
+        .circle3 {
+            grid-column: 2;
+            grid-row: 2;
+
+            justify-self: center;
+            align-self: center;
+
+            width: 320px;
+            height: 320px;
+
+            z-index: 5;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* Dog - bottom left */
+
+        .circle4 {
+            grid-column: 1;
+            grid-row: 3;
+
+            justify-self: center;
+            align-self: center;
+
+            transform: translate(5px, -5px);
+        }
+
+
+        /* Bear - bottom right */
+
+        .circle5 {
+            grid-column: 3;
+            grid-row: 3;
+
+            justify-self: center;
+            align-self: center;
+
+            transform: translate(-5px, -5px);
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Wolf -->
+        <div class="circle circle1">
+            <img src="./cheetah.jpg" alt="Wolf">
+        </div>
+
+
+        <!-- Tiger -->
+        <div class="circle circle2">
+            <img src="./eagle.jpg" alt="Tiger">
+        </div>
+
+
+        <!-- Lion -->
+        <div class="circle circle3">
+            <img src="./loin.jpg" alt="Lion">
+        </div>
+
+
+        <!-- Dog -->
+        <div class="circle circle4">
+            <img src="./tiger - Copy.jpg" alt="Dog">
+        </div>
+
+
+        <!-- Bear -->
+        <div class="circle circle5">
+            <img src="./wolf.jpg" alt="Bear">
+        </div>
+
+    </div>
+
+</body>
+</html>
